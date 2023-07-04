@@ -1,170 +1,192 @@
 import { HoverCard, Code, Button, Text, Group, Grid } from '@mantine/core';
-import { IconDatabase } from '@tabler/icons-react';
 
 function Button1() {
-  const uno = `
-  <Button color="red" radius="xs">
-             hola
-    </Button>
-  `;
+ 
   return (
     <>
-      <Grid >
 
-        <Grid.Col span={2}>
-          <Group position="center">
-            <HoverCard width={280} shadow="md">
-              <HoverCard.Target>
-                <Button color="red" radius="xs">
-                  hola
-                </Button>
-              </HoverCard.Target>
-              <HoverCard.Dropdown>
-                <Code>
-                  {uno}
-                </Code>
-              </HoverCard.Dropdown>
-            </HoverCard>
-          </Group>
+      <Group position="center">
+
+        <Button color="red" radius="xs" size="xs">
+          hola
+
+        </Button>
+        <Button color="red" radius="xs">
+          hola
+        </Button>
+
+        <Button color="red" radius="xs" size="md">
+          hola
+        </Button>
+
+        <Button color="red" radius="xs" size="lg">
+          hola
+        </Button>
+
+        <Button color="red" radius="xs" size="xl">
+          hola
+        </Button>
+
+      </Group>
 
 
-        </Grid.Col>
+      <Group position="center" mt={15}>
 
-        <Grid.Col span={2}>
-          <Group position="center">
-            <HoverCard width={280} shadow="md">
-              <HoverCard.Target>
-                <Button color="pink" radius="xl" >
-                  hola
-                </Button>
-              </HoverCard.Target>
-              <HoverCard.Dropdown>
-                <Code>
-                  Hover card is revealed when user hovers over target element, it will be hidden once
-                  mouse is not over both target and dropdown elements
-                </Code>
-              </HoverCard.Dropdown>
-            </HoverCard>
-          </Group>
+        <Button variant="light" color="indigo" radius="xs" size="xs">
+          hola
+        </Button>
 
-        </Grid.Col>
+        <Button variant="light" color="indigo" radius="xs">
+          hola
+        </Button>
 
-        <Grid.Col span={2}>
-          <Group position="center">
-            <HoverCard width={280} shadow="md">
-              <HoverCard.Target>
-                <Button color="green" radius="xs" uppercase>
-                  hola
-                </Button>
-              </HoverCard.Target>
-              <HoverCard.Dropdown>
-                <Code>
-                  Hover card is revealed when user hovers over target element, it will be hidden once
-                  mouse is not over both target and dropdown elements
-                </Code>
-              </HoverCard.Dropdown>
-            </HoverCard>
-          </Group>
+        <Button variant="light" color="indigo" radius="xs" size="md">
+          hola
+        </Button>
 
-        </Grid.Col>
+        <Button variant="light" color="indigo" radius="xs" size="lg">
+          hola
+        </Button>
 
-        <Grid.Col span={2}>
-          <Group position="center">
-            <HoverCard width={280} shadow="md">
-              <HoverCard.Target>
-                <Button radius="xs" disabled>
-                  hola
-                </Button>
-              </HoverCard.Target>
-              <HoverCard.Dropdown>
-                <Code>
-                  Hover card is revealed when user hovers over target element, it will be hidden once
-                  mouse is not over both target and dropdown elements
-                </Code>
-              </HoverCard.Dropdown>
-            </HoverCard>
-          </Group>
+        <Button variant="light" color="indigo" radius="xs" size="xl">
+          hola
+        </Button>
 
-        </Grid.Col>
+      </Group>
 
-        <Grid.Col span={2}>
-          <Group position="center">
-            <HoverCard width={280} shadow="md">
-              <HoverCard.Target>
-                <Button color="violet" radius="xs" compact>
-                  hola
-                </Button>
-              </HoverCard.Target>
-              <HoverCard.Dropdown>
-                <Code>
-                  Hover card is revealed when user hovers over target element, it will be hidden once
-                  mouse is not over both target and dropdown elements
-                </Code>
-              </HoverCard.Dropdown>
-            </HoverCard>
-          </Group>
+      <Group position="center" mt={15}>
 
-        </Grid.Col>
+        <Button variant="outline" color="green" radius="xs" size="xs">
+          hola
+        </Button>
 
-        <Grid.Col span={2}>
-          <Group position="center">
-            <HoverCard width={280} shadow="md">
-              <HoverCard.Target>
-                <Button radius="xs" size="xl" compact>
-                  hola
-                </Button>
-              </HoverCard.Target>
-              <HoverCard.Dropdown>
-                <Code>
-                  Hover card is revealed when user hovers over target element, it will be hidden once
-                  mouse is not over both target and dropdown elements
-                </Code>
-              </HoverCard.Dropdown>
-            </HoverCard>
-          </Group>
+        <Button variant="outline" color="green" radius="xs">
+          hola
+        </Button>
 
-        </Grid.Col>
+        <Button variant="outline" color="green" radius="xs" size="md">
+          hola
+        </Button>
 
-        <Grid.Col span={2}>
-          <Group position="center">
-            <HoverCard width={280} shadow="md">
-              <HoverCard.Target>
-                <Button variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>
-                  hola
-                </Button>
-              </HoverCard.Target>
-              <HoverCard.Dropdown>
-                <Code>
-                  Hover card is revealed when user hovers over target element, it will be hidden once
-                  mouse is not over both target and dropdown elements
-                </Code>
-              </HoverCard.Dropdown>
-            </HoverCard>
-          </Group>
+        <Button variant="outline" color="green" radius="xs" size="lg">
+          hola
+        </Button>
 
-        </Grid.Col>
+        <Button variant="outline" color="green" radius="xs" size="xl">
+          hola
+        </Button>
 
-        <Grid.Col span={2}>
-          <Group position="center">
-            <HoverCard width={280} shadow="md">
-              <HoverCard.Target>
-                <Button leftIcon={<IconDatabase size="1rem" />}>
-                  hola
-                </Button>
-              </HoverCard.Target>
-              <HoverCard.Dropdown>
-                <Code>
-                  Hover card is revealed when user hovers over target element, it will be hidden once
-                  mouse is not over both target and dropdown elements
-                </Code>
-              </HoverCard.Dropdown>
-            </HoverCard>
-          </Group>
+        <Button variant="subtle" color="yellow" radius="xs" size="xs">
+          hola
+        </Button>
 
-        </Grid.Col>
+        <Button variant="subtle" color="yellow" radius="xs">
+          hola
+        </Button>
 
-      </Grid>
+        <Button variant="subtle" color="yellow" radius="xs" size="md">
+          hola
+        </Button>
 
+        <Button variant="subtle" color="yellow" radius="xs" size="lg">
+          hola
+        </Button>
+
+        <Button variant="subtle" color="yellow" radius="xs" size="xl">
+          hola
+        </Button>
+
+      </Group>
+
+      <Group position="center" mt={15}>
+        <Button color="dark" radius="xs">
+          hola
+        </Button>
+        <Button color="gray" radius="xs">
+          hola
+        </Button>
+        <Button color="red" radius="xs">
+          hola
+        </Button>
+        <Button color="pink" radius="xs">
+          hola
+        </Button>
+        <Button color="grape" radius="xs">
+          hola
+        </Button>
+        <Button color="violet" radius="xs">
+          hola
+        </Button>
+        <Button color="indigo" radius="xs">
+          hola
+        </Button>
+        <Button radius="xs">
+          hola
+        </Button>
+        <Button color="cyan" radius="xs">
+          hola
+        </Button>
+        <Button color="teal" radius="xs">
+          hola
+        </Button>
+        <Button color="green" radius="xs">
+          hola
+        </Button>
+        <Button color="lime" radius="xs">
+          hola
+        </Button>
+        <Button color="yellow" radius="xs">
+          hola
+        </Button>
+        <Button color="orange" radius="xs">
+          hola
+        </Button>
+      </Group>
+
+      <Group position="center" mt={15}>
+        <Button color="dark" radius="xl" size="xs">
+          hola
+        </Button>
+        <Button color="gray" radius="xl" size="xs">
+          hola
+        </Button>
+        <Button color="red" radius="xl" size="xs">
+          hola
+        </Button>
+        <Button color="pink" radius="xl" size="xs">
+          hola
+        </Button>
+        <Button color="grape" radius="xl" size="xs">
+          hola
+        </Button>
+        <Button color="violet" radius="xl" size="xs">
+          hola
+        </Button>
+        <Button color="indigo" radius="xl" size="xs">
+          hola
+        </Button>
+        <Button radius="xl" size="xs">
+          hola
+        </Button>
+        <Button color="cyan" radius="xl" size="xs">
+          hola
+        </Button>
+        <Button color="teal" radius="xl" size="xs">
+          hola
+        </Button>
+        <Button color="green" radius="xl" size="xs">
+          hola
+        </Button>
+        <Button color="lime" radius="xl" size="xs">
+          hola
+        </Button>
+        <Button color="yellow" radius="xl" size="xs">
+          hola
+        </Button>
+        <Button color="orange" radius="xl" size="xs">
+          hola
+        </Button>
+      </Group>
     </>
   );
 }
