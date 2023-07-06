@@ -29,7 +29,7 @@ function Home() {
       <Grid gutter="lg">
         {filteredData.map((item, index) => (
           <Card key={index} ml={50} mt={15} shadow="xl" padding="lg">
-            <img src={item.imagen} alt={item.nombre} style={{ marginBottom: '1rem' }} />
+            <img src={item.imagen} alt={item.nombre} style={{ marginBottom: '1rem', maxWidth: '100%' }} />
             <Text variant="h4" style={{ marginBottom: '0.5rem' }}>
               {item.nombre}
             </Text>
@@ -39,6 +39,7 @@ function Home() {
           </Card>
         ))}
       </Grid>
+
     </>
   );
 }
