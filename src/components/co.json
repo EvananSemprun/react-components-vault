@@ -1,6 +1,6 @@
 [
     {
-      "nombre": "boton 1",
+      "nombre": "boton 1 (mantine)",
       "ruta": "/Button1",
       "imagen": "./img/img1.jpg",
       "tipo": "página"

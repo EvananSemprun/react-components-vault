@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import  { useState, ChangeEvent } from 'react';
 import { Card, Title, Text, Button, Grid, Input } from '@mantine/core';
 import co from './co.json';
 

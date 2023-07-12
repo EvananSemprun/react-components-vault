@@ -1,16 +1,60 @@
-import { HoverCard, Code, Button, Text, Group, Grid } from '@mantine/core';
-
+import { HoverCard, Title, Group, Code, Button, ActionIcon } from '@mantine/core';
+import { IconInfoOctagonFilled } from '@tabler/icons-react';
 function Button1() {
- 
+  const info1 = `
+  <Button color="red" radius="xs" size="xs/md/lg/xl">
+          hola
+        </Button>
+  `;
+
+  const info2 = `
+  <Button  variant="light" color="red" radius="xs" size="xs/md/lg/xl">
+          hola
+        </Button>
+  `;
+
+  const info3 = `
+  <Button variant="outline" variant="light" color="red" radius="xs" size="xs/md/lg/xl">
+          hola
+        </Button>
+  `;
+  const info4 = `
+  <Button variant="subtle" variant="light" color="red" radius="xs" size="xs/md/lg/xl">
+          hola
+        </Button>
+  `;
+  const info5 = `
+  <Button color="dark" radius="xs">
+          hola
+        </Button>
+  `;
+  const info6 = `
+  <Button color="dark" radius="xl" size="xs">
+          hola
+        </Button>
+  `;
   return (
     <>
-
+      <Title align='center' order={1}>Mantine Button</Title>
       <Group position="center">
+
+        <HoverCard width={410} shadow="md">
+          <HoverCard.Target>
+            <ActionIcon >
+              <IconInfoOctagonFilled width={48} height={48} />
+            </ActionIcon>
+          </HoverCard.Target>
+          <HoverCard.Dropdown>
+            <Code block>{info1}</Code>
+
+          </HoverCard.Dropdown>
+        </HoverCard>
+
 
         <Button color="red" radius="xs" size="xs">
           hola
-
         </Button>
+
         <Button color="red" radius="xs">
           hola
         </Button>
@@ -31,6 +75,18 @@ function Button1() {
 
 
       <Group position="center" mt={15}>
+
+        <HoverCard width={520} shadow="md">
+          <HoverCard.Target>
+            <ActionIcon >
+              <IconInfoOctagonFilled width={48} height={48} />
+            </ActionIcon>
+          </HoverCard.Target>
+          <HoverCard.Dropdown>
+            <Code block>{info2}</Code>
+
+          </HoverCard.Dropdown>
+        </HoverCard>
 
         <Button variant="light" color="indigo" radius="xs" size="xs">
           hola
@@ -56,6 +112,19 @@ function Button1() {
 
       <Group position="center" mt={15}>
 
+        <HoverCard width={630} shadow="md">
+          <HoverCard.Target>
+            <ActionIcon >
+              <IconInfoOctagonFilled width={48} height={48} />
+            </ActionIcon>
+          </HoverCard.Target>
+          <HoverCard.Dropdown>
+            <Code block>{info3}</Code>
+
+          </HoverCard.Dropdown>
+        </HoverCard>
+
+
         <Button variant="outline" color="green" radius="xs" size="xs">
           hola
         </Button>
@@ -75,9 +144,22 @@ function Button1() {
         <Button variant="outline" color="green" radius="xs" size="xl">
           hola
         </Button>
-        </Group>
+      </Group>
 
-<Group position="center" mt={15}>
+      <Group position="center" mt={15}>
+
+        <HoverCard width={630} shadow="md">
+          <HoverCard.Target>
+            <ActionIcon >
+              <IconInfoOctagonFilled width={48} height={48} />
+            </ActionIcon>
+          </HoverCard.Target>
+          <HoverCard.Dropdown>
+            <Code block>{info4}</Code>
+
+          </HoverCard.Dropdown>
+        </HoverCard>
+
         <Button variant="subtle" color="yellow" radius="xs" size="xs">
           hola
         </Button>
@@ -101,6 +183,19 @@ function Button1() {
       </Group>
 
       <Group position="center" mt={15}>
+
+        <HoverCard width={330} shadow="md">
+          <HoverCard.Target>
+            <ActionIcon >
+              <IconInfoOctagonFilled width={48} height={48} />
+            </ActionIcon>
+          </HoverCard.Target>
+          <HoverCard.Dropdown>
+            <Code block>{info5}</Code>
+
+          </HoverCard.Dropdown>
+        </HoverCard>
+
         <Button color="dark" radius="xs">
           hola
         </Button>
@@ -146,6 +241,17 @@ function Button1() {
       </Group>
 
       <Group position="center" mt={15}>
+        <HoverCard width={430} shadow="md">
+          <HoverCard.Target>
+            <ActionIcon >
+              <IconInfoOctagonFilled width={48} height={48} />
+            </ActionIcon>
+          </HoverCard.Target>
+          <HoverCard.Dropdown>
+            <Code block>{info6}</Code>
+
+          </HoverCard.Dropdown>
+        </HoverCard>
         <Button color="dark" radius="xl" size="xs">
           hola
         </Button>
