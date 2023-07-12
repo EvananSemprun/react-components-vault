@@ -75,7 +75,9 @@ function Button1() {
         <Button variant="outline" color="green" radius="xs" size="xl">
           hola
         </Button>
+        </Group>
 
+<Group position="center" mt={15}>
         <Button variant="subtle" color="yellow" radius="xs" size="xs">
           hola
         </Button>
