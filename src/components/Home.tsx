@@ -1,4 +1,4 @@
-import  { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { Card, Title, Text, Button, Grid, Input } from '@mantine/core';
 import co from './co.json';
 
@@ -16,7 +16,7 @@ function Home() {
   return (
     <>
       <Title mb={15} align="center" order={1}>
-        Nose que poner
+        REACT
       </Title>
 
       <Input
@@ -26,10 +26,27 @@ function Home() {
         style={{ marginBottom: '1rem' }}
       />
 
-      <Grid gutter="lg">
+      <Grid gutter="lg" style={{ justifyContent: 'center' }}>
         {filteredData.map((item, index) => (
-          <Card key={index} ml={50} mt={15} shadow="xl" padding="lg">
-          <img src={item.imagen} alt={item.nombre} style={{ marginBottom: '1rem', width: '400px', height: '250px' }} />
+          <Card
+            key={index}
+            mt={15}
+            shadow="xl"
+            padding="lg"
+            ml={15}
+            mr={15}
+            style={{ minWidth: '250px', maxWidth: '400px' }}
+          >
+            <img
+              src={item.imagen}
+              alt={item.nombre}
+              style={{
+                marginBottom: '1rem',
+                width: '100%',
+                height: 'auto',
+                objectFit: 'cover',
+              }}
+            />
             <Text variant="h4" style={{ marginBottom: '0.5rem' }}>
               {item.nombre}
             </Text>
