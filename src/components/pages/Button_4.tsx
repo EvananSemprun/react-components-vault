@@ -20,9 +20,43 @@ const Button = () => {
       
       <button className="fill-8">Aceptar</button>
 
-      <button className="fill-9">Enviar</button>
+    
 
       <button className="fill-10">Aceptar</button>
+
+      </Group>
+
+      <Group spacing="xl" mt={15}>
+      <button className="fill-11">¡Clickea aquí!</button>
+
+      <button className="fill-12">Siguiente</button>
+
+
+
+      </Group>
+
+      <Group spacing="xl" mt={15}>
+      <button className="fill-9">Enviar</button>
+
+      <button className="fill-13">Enviar</button>
+
+      <button className="fill-14">Enviar</button>
+
+      <button className="fill-15">Enviar</button>
+
+
+      <button className="fill-16">Enviar</button>
+
+
+      <button className="fill-17">Enviar</button>
+
+      <button className="fill-18">Enviar</button>
+      <button className="fill-19">Enviar</button>
+      <button className="fill-20">Enviar</button>
+      <button className="fill-21">Enviar</button>
+      <button className="fill-22">Enviar</button>
+      <button className="fill-23">Enviar</button>
+      <button className="fill-24">Enviar</button>
 
       </Group>
 
