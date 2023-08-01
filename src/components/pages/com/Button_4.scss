@@ -1,16 +1,185 @@
 // Button_4.scss
 
-.fill-in-button {
+.fill-1 {
   background-color: transparent;
-  border: 2px solid orange;
-  color: orange;
+  border: 2px solid #D9480F;
+  color: #D9480F;
   padding: 10px 20px;
   transition: background-color 0.3s ease-in-out;
   cursor: pointer;
   font-size: 16px;
+
+  &:hover {
+    background-color: #D9480F;
+    color: white;
+  }
 }
 
-.fill-in-button:hover {
-  background-color: orange;
-  color: white;
+
+.fill-2 {
+  background-color: transparent;
+  border: 2px solid #E67700;
+  border-radius: 30px; 
+  color: #E67700;
+  padding: 12px 24px;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #E67700;
+    color: white;
+  }
 }
+
+.fill-3 {
+  background-color: transparent;
+  border: 2px solid #FFD166;
+  color: #FFD166;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px); 
+  }
+}
+
+.fill-4 {
+  background: linear-gradient(45deg, #2B8A3E, #51CF66); 
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background: linear-gradient(45deg, #51CF66, #2B8A3E);
+  }
+}
+
+.fill-5 {
+  background-color: transparent;
+  border: 2px solid #087F5B;
+  color: #087F5B;
+  padding: 10px 20px;
+  transition: transform 0.3s ease-in-out; 
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #087F5B;
+    color: white;
+    transform: scale(1.1); 
+  }
+}
+
+.fill-6 {
+  background-color: transparent;
+  border: 5px double #0B7285; 
+  color: #0B7285;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #0B7285;
+    border: 5px double white; 
+    color: white;
+  }
+}
+
+.fill-7 {
+  background-color: transparent;
+  border: 2px solid #1864AB;
+  color: white;
+  padding: 10px 20px;
+  position: relative; 
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:before {
+    content: ''; 
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background-color: #1864AB;
+    z-index: -1; 
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover {
+    color: white;
+  }
+
+  &:hover:before {
+    transform: scaleX(1.05) scaleY(1.2); 
+  }
+}
+.fill-8 {
+  background-color: transparent;
+  border: 2px solid #364FC7;
+  color: #364FC7;
+  padding: 10px 20px;
+  clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #364FC7;
+    color: white;
+  }
+  
+}
+
+.fill-9 {
+  background-color: transparent;
+  border: 2px solid #5F3DC4;
+  color: #5F3DC4;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #5F3DC4;
+    transition: left 0.3s ease-in-out;
+    z-index: -1; 
+  }
+
+  &:hover {
+    color: white; 
+  }
+
+  &:hover:after {
+    left: 0;
+  }
+}
+
+.fill-10 {
+  background-color: #ED254E;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(237, 37, 78, 0.5); 
+  }
+}
+
