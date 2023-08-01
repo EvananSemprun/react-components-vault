@@ -1,12 +1,226 @@
 import './com/button_3.css';
-import {  Title} from '@mantine/core';
+import { Title, ActionIcon, ScrollArea, HoverCard, Code } from '@mantine/core';
+import { IconInfoOctagonFilled } from '@tabler/icons-react';
+function Button3() {
+  const info1 =
+    `
+    ul {
+      padding: 0;
+      list-style-type: none;
+    }
+    li {
+      font-size: 25px;
+      width: 8em;
+      height: 2em;
+      text-align: center;
+      line-height: 2em;
+      font-family: sans-serif;
+      text-transform: capitalize;
+      position: relative;
+      transition: 0.5s;
+      margin: 0.8em;
+    }
+    
+    li::before,
+    li::after {
+      content: '';
+      position: absolute;
+      width: 0.6em;
+      height: 0.6em;
+      background-color: gainsboro;
+      border-radius: 50%;
+      transition: 0.5s cubic-bezier(0.5, -0.5, 0.25, 1.5);
+      top: calc(50% - 0.6em / 2);
+    }
+    
+    li::before {left: 0; z-index: -1;}
+    li::after {right: 0; z-index: -2;}
+    
+    li.color-1:hover {
+      color: white;
+    }
+    
+    li.color-1:hover::before,
+    li.color-1:hover::after {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      background-color: crimson;
+    }
+    
+    li.color-1:hover::before {
+      top: 0;
+    }
+    
+    li.color-1:hover::after {
+      right: -0.4em;
+      filter: brightness(0.8);
+    }
+    
+    `;
+  const info2 =
+    `
+.wrapper {
+  display: flex;
+  justify-content: center;
 
-const Button3 = () => {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta {
+    display: flex;
+    padding: 10px 45px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color: white;
+    background: blue;
+    transition: 1s;
+    box-shadow: 6px 6px 0 black;
+    transform: skewX(-15deg);
+}
+
+.cta:focus {
+   outline: none; 
+}
+
+.cta:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 #FBC638;
+}
+
+.cta span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 0px;
+}
+
+.cta:hover  span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 45px;
+}
+
+  span {
+    transform: skewX(15deg) 
+  }
+
+  span:nth-child(2) {
+    width: 20px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+  }
+  
+
+path.one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+}
+
+path.two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+
+.cta:hover path.three {
+    animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+
+
+@keyframes color_anim {
+    0% {
+        fill: white;
+    }
+    50% {
+        fill: #FBC638;
+    }
+    100% {
+        fill: white;
+    }
+}
+    
+    `;
+  const info3 =
+    `
+    .button {
+      display: inline-block;
+      text-align: center;
+      background: black;
+      color: #eee;
+      font-weight: bold;
+      padding: 1.18em 1.32em 1.03em;
+      line-height: 1;
+      border-radius: 1em;
+      position: relative;
+      min-width: 8.23em;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.25rem;
+    }
+    
+    .button:before,
+    .button:after {
+      width: 4.4em;
+      height: 2.95em;
+      position: absolute;
+      content: "";
+      display: inline-block;
+      background: black;
+      border-radius: 50%;
+      transition: transform 1s ease;
+      transform: scale(0);
+      z-index: -1;
+    }
+    
+    .button:before {
+      top: -25%;
+      left: 20%;
+    }
+    
+    .button:after {
+      bottom: -25%;
+      right: 20%;
+    }
+    
+    .button:hover:before,
+    .button:hover:after {
+      transform: none;
+    }
+    
+    
+    `;
   return (
     <>
-          <Title align='center' order={1}>Hover Effects</Title>
+      <Title align='center' order={1}>Hover Effects</Title>
 
-      <div style={{marginBottom:"50px"}}>
+      <HoverCard width={610} shadow="md">
+        <HoverCard.Target>
+          <ActionIcon >
+            <IconInfoOctagonFilled width={48} height={48} />
+          </ActionIcon>
+        </HoverCard.Target>
+        <HoverCard.Dropdown>
+          <ScrollArea h={250}>
+
+            <Code block>{info1}</Code>
+          </ScrollArea>
+        </HoverCard.Dropdown>
+      </HoverCard>
+
+      <div style={{ marginBottom: "50px" }}>
+
         <ul>
           <li className="color-1">Inicio</li>
           <li className="color-2">Productos</li>
@@ -14,7 +228,22 @@ const Button3 = () => {
           <li className="color-4">Cantactanos</li>
         </ul>
       </div>
-      <div className="wrapper" style={{marginBottom:"50px"}}>
+
+      <HoverCard width={610} shadow="md">
+        <HoverCard.Target>
+          <ActionIcon >
+            <IconInfoOctagonFilled width={48} height={48} />
+          </ActionIcon>
+        </HoverCard.Target>
+        <HoverCard.Dropdown>
+          <ScrollArea h={250}>
+
+            <Code block>{info2}</Code>
+          </ScrollArea>
+        </HoverCard.Dropdown>
+      </HoverCard>
+      <div className="wrapper" style={{ marginBottom: "50px" }}>
+
         <a className="cta" href="#">
           <span>Siguiente</span>
           <span>
@@ -28,18 +257,32 @@ const Button3 = () => {
           </span>
         </a>
       </div>
+      <HoverCard width={810} shadow="md">
+        <HoverCard.Target>
+          <ActionIcon >
+            <IconInfoOctagonFilled width={48} height={48} />
+          </ActionIcon>
+        </HoverCard.Target>
+        <HoverCard.Dropdown>
+          <ScrollArea h={250}>
+
+            <Code block>{info3}</Code>
+          </ScrollArea>
+
+        </HoverCard.Dropdown>
+      </HoverCard>
       <div className="wrapper">
-      <a className="button" href="#">Hover me!</a>
-      <svg style={{ visibility: 'hidden', position: 'absolute' }} width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <defs>
-          <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-          </filter>
-        </defs>
-      </svg>
-    </div>
+        <a className="button" href="#">Hover me!</a>
+        <svg style={{ visibility: 'hidden', position: 'absolute' }} width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+              <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
     </>
   );
 };
