@@ -61,6 +61,17 @@ const Button = () => {
       <Group spacing="xl" mt={15}>
         <button className="fill-3">Presiona</button>
 
+        <button className="fill-22">Presiona</button>
+        <button className="fill-23">Presiona</button>
+        <button className="fill-24">Presiona</button>
+
+
+        <button className="fill-25">Presiona</button>
+
+        <button className="fill-26">Presiona</button>
+        <button className="fill-27">Presiona</button>
+        <button className="fill-28">Presiona</button>
+
       </Group>
 
 
