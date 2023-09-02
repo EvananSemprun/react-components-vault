@@ -285,6 +285,6 @@ path.two {
       </div>
     </>
   );
-};
+}
 
 export default Button3;

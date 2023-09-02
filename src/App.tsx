@@ -6,7 +6,7 @@ import Button1 from './components/pages/Button_1'
 import Button2 from './components/pages/Button_2';
 import Button3 from './components/pages/Button_3';
 import Button4 from './components/pages/Button_4';
-import Pdfcreate from './components/pages/Pdfcreate';
+import Pdf from './components/pages/Pdfcreate';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Route path="/Button2" element={<Button2/>} />
         <Route path="/Button3" element={<Button3/>} />
         <Route path="/Button4" element={<Button4/>} />
-        <Route path="/Pdfcreate" element={<Pdfcreate/>} />
+        <Route path="/Pdf" element={<Pdf/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
