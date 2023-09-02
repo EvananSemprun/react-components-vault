@@ -1,4 +1,4 @@
-
+import React, { useState } from 'react';
 import { Document, Page, Text, View, StyleSheet, BlobProvider } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
@@ -13,20 +13,40 @@ const styles = StyleSheet.create({
   },
 });
 
-const MyDocument = () => (
+const MyDocument = ({ name, lastName }: { name: string; lastName: string }) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
-        <Text>1 2 3 </Text>
+        <Text>Name: {name}</Text>
+        <Text>Last Name: {lastName}</Text>
       </View>
     </Page>
   </Document>
 );
 
 const App = () => {
+  const [name, setName] = useState('');
+  const [lastName, setLastName] = useState('');
+
+  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value);
+  };
+
+  const handleLastNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLastName(event.target.value);
+  };
+
   return (
     <div>
-      <BlobProvider document={<MyDocument />}>
+      <div>
+        <label>Name:</label>
+        <input type="text" value={name} onChange={handleNameChange} />
+      </div>
+      <div>
+        <label>Last Name:</label>
+        <input type="text" value={lastName} onChange={handleLastNameChange} />
+      </div>
+      <BlobProvider document={<MyDocument name={name} lastName={lastName} />}>
         {({ url, loading, error }) => {
           if (loading) {
             return <p>Loading...</p>;
@@ -38,7 +58,7 @@ const App = () => {
             return (
               <div>
                 <a href={url} target="_blank" rel="noopener noreferrer" download="hello.pdf">
-                  <button>Hello</button>
+                  <button>Generar</button>
                 </a>
               </div>
             );

@@ -23,6 +23,11 @@
       "ruta": "/Button4",
       "imagen": "./img/img4.jpg",
       "tipo": "página"
+    },
+    {
+      "nombre": "Generar pdf",
+      "ruta": "/pdf",
+      "imagen": "./img/pdf.png",
+      "tipo": "página"
     }
-    
   ]
