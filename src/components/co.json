@@ -1,33 +1,19 @@
 [
-    {
-      "nombre": "botones (mantine)",
-      "ruta": "/Button1",
-      "imagen": "./img/img1.jpg",
-      "tipo": "página"
-    },
-    {
-      "nombre": "botones iconos (mantine)",
-      "ruta": "/Button2",
-      "imagen": "./img/img2.jpg",
-      "tipo": "página"
-    },
-    {
-      "nombre": "Botones Hover Effects #1",
-      "ruta": "/Button3",
-      "imagen": "./img/img3.jpg",
-      "tipo": "página"
-    }
-    ,
-    {
-      "nombre": "Botones Hover Effects #2",
-      "ruta": "/Button4",
-      "imagen": "./img/img4.jpg",
-      "tipo": "página"
-    },
-    {
-      "nombre": "Generar pdf",
-      "ruta": "/pdf",
-      "imagen": "./img/pdf.png",
-      "tipo": "página"
-    }
-  ]
+  {
+    "nombre": "Botones (mantine)",
+    "ruta": "/Button1",
+    "imagen": "./img/img1.jpg",
+    "tipo": "página"
+  },{
+    "nombre": "Efectos hover botones ",
+    "ruta": "/Button2",
+    "imagen": "./img/img2.jpg",
+    "tipo": "página"
+  },
+  {
+    "nombre": "Generar pdf",
+    "ruta": "/pdf",
+    "imagen": "./img/pdf.png",
+    "tipo": "página"
+  }
+]

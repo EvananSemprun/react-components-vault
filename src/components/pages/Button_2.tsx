@@ -1,152 +1,78 @@
-import { ActionIcon, HoverCard, Group, Code } from '@mantine/core';
-import { IconPizza, IconInfoOctagonFilled } from '@tabler/icons-react';
-function Button2() {
-    const info1 = 
-    `<ActionIcon variant="transparent/subtle/default/outline/filled/light" color="dark" >
-    <IconPizza size="1rem" />
- </ActionIcon>`;
-    return (
-        <>
-            <HoverCard width={610} shadow="md">
-                <HoverCard.Target>
-                    <ActionIcon >
-                        <IconInfoOctagonFilled width={48} height={48} />
-                    </ActionIcon>
-                </HoverCard.Target>
-                <HoverCard.Dropdown>
-                    <Code block>{info1}</Code>
+import './com/Button_2.scss';
+import { Group, Title } from '@mantine/core';
+const Button = () => {
+  return (
+    <>
+      <Title align='center' order={1}>Hover Effects #2</Title>
 
-                </HoverCard.Dropdown>
-            </HoverCard>
+      <Group spacing="xl" mt={150}>
+        <button className="fill-1">¡Hola!</button>
 
-            <Group position="center" mt={55} mb={10}>
-                <ActionIcon variant="transparent" color="dark"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle" color="dark"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default" color="dark"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline" color="dark"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled" color="dark"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light" color="dark"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
+        <button className="fill-2">Clic aquí</button>
 
-            <Group position="center" mb={10}>
-                <ActionIcon variant="transparent"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
+        <button className="fill-4">Aceptar</button>
 
-            <Group position="center" mb={10}>
-                <ActionIcon variant="transparent" color="red"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle" color="red"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default" color="red"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline" color="red"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled" color="red"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light" color="red"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
+        <button className="fill-5">Enviar</button>
 
-            <Group position="center" mb={10}>
-                <ActionIcon variant="transparent" color="pink"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle" color="pink"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default" color="pink"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline" color="pink"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled" color="pink"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light" color="pink"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
+        <button className="fill-6">Comprar</button>
 
-            <Group position="center" mb={10}>
-                <ActionIcon variant="transparent" color="grape"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle" color="grape"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default" color="grape"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline" color="grape"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled" color="grape"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light" color="grape"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
+        <button className="fill-7">Ver más</button>
 
-            <Group position="center" mb={10}>
-                <ActionIcon variant="transparent" color="violet"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle" color="violet"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default" color="violet"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline" color="violet"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled" color="violet"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light" color="violet"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
+        <button className="fill-8">Aceptar</button>
 
-            <Group position="center" mb={10}>
-                <ActionIcon variant="transparent" color="indigo"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle" color="indigo"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default" color="indigo"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline" color="indigo"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled" color="indigo"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light" color="indigo"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
+        <button className="fill-10">Aceptar</button>
+        <button className="fill-11">¡Clickea aquí!</button>
 
-            <Group position="center" mb={10}>
-                <ActionIcon variant="transparent" color="blue"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle" color="blue"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default" color="blue"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline" color="blue"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled" color="blue"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light" color="blue"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
+        <button className="fill-12">Siguiente</button>
 
-            <Group position="center" mb={10}>
-                <ActionIcon variant="transparent" color="cyan"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle" color="cyan"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default" color="cyan"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline" color="cyan"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled" color="cyan"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light" color="cyan"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
 
-            <Group position="center" mb={10}>
-                <ActionIcon variant="transparent" color="teal"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle" color="teal"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default" color="teal"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline" color="teal"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled" color="teal"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light" color="teal"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
 
-            <Group position="center" mb={10}>
-                <ActionIcon variant="transparent" color="green"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle" color="green"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default" color="green"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline" color="green"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled" color="green"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light" color="green"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
+      </Group>
 
-            <Group position="center" mb={10}>
-                <ActionIcon variant="transparent" color="lime"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle" color="lime"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default" color="lime"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline" color="lime"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled" color="lime"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light" color="lime"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
+      <Group spacing="xl" mt={15}>
 
-            <Group position="center" mb={10}>
-                <ActionIcon variant="transparent" color="yellow"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle" color="yellow"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default" color="yellow"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline" color="yellow"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled" color="yellow"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light" color="yellow"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
 
-            <Group position="center" mb={10}>
-                <ActionIcon variant="transparent" color="orange"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="subtle" color="orange"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="default" color="orange"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="outline" color="orange"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="filled" color="orange"><IconPizza size="1rem" /></ActionIcon>
-                <ActionIcon variant="light" color="orange"><IconPizza size="1rem" /></ActionIcon>
-            </Group>
+      </Group>
 
-        </>
-    );
-}
+      <Group spacing="xl" mt={15}>
+        <button className="fill-9">Enviar</button>
 
-export default Button2;
+        <button className="fill-13">Enviar</button>
+
+        <button className="fill-14">Enviar</button>
+
+        <button className="fill-15">Enviar</button>
+
+
+        <button className="fill-16">Enviar</button>
+
+
+        <button className="fill-17">Enviar</button>
+
+        <button className="fill-18">Enviar</button>
+        <button className="fill-19">Enviar</button>
+        <button className="fill-20">Enviar</button>
+        <button className="fill-29">Enviar</button>
+
+      </Group>
+
+      <Group spacing="xl" mt={15}>
+
+        <button className="fill-3">Presiona</button>
+        <button className="fill-22">Presiona</button>
+        <button className="fill-23">Presiona</button>
+        <button className="fill-24">Presiona</button>
+        <button className="fill-25">Presiona</button>
+        <button className="fill-26">Presiona</button>
+        <button className="fill-27">Presiona</button>
+        <button className="fill-28">Presiona</button>
+
+      </Group>
+
+
+    </>
+
+  );
+};
+
+export default Button;
