@@ -9,9 +9,14 @@
     "ruta": "/Button2",
     "imagen": "./img/img2.jpg",
     "tipo": "página"
+  },{
+    "nombre": "Login 1 ",
+    "ruta": "/Login1",
+    "imagen": "./img/login1.jpg",
+    "tipo": "página"
   },
   {
-    "nombre": "Generar pdf",
+    "nombre": "Generar pdf (en construcción)",
     "ruta": "/pdf",
     "imagen": "./img/pdf.png",
     "tipo": "página"
