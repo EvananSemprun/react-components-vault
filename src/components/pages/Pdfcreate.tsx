@@ -1,28 +1,7 @@
 import React, { useState } from 'react';
-import { Document, Page, Text, View, StyleSheet, BlobProvider } from '@react-pdf/renderer';
-
-const styles = StyleSheet.create({
-  page: {
-    flexDirection: 'row',
-    backgroundColor: '#E4E4E4',
-  },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
-  },
-});
-
-const MyDocument = ({ name, lastName }: { name: string; lastName: string }) => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <View style={styles.section}>
-        <Text>Name: {name}</Text>
-        <Text>Last Name: {lastName}</Text>
-      </View>
-    </Page>
-  </Document>
-);
+import { BlobProvider } from '@react-pdf-viewer/provider';
+import { PDFDocument, rgb } from 'pdf-lib'; // Importa pdf-lib
+import diplomaPDF from './DIPLOMA.pdf'; // Asegúrate de tener el archivo DIPLOMA.pdf en tu proyecto
 
 const App = () => {
   const [name, setName] = useState('');
@@ -36,6 +15,49 @@ const App = () => {
     setLastName(event.target.value);
   };
 
+  const generatePDF = async () => {
+    try {
+      // Cargar el PDF existente
+      const existingPdfBytes = await fetch(diplomaPDF).then((res) => res.arrayBuffer());
+
+      // Cargar el PDF en un PDFDocument
+      const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
+      // Obtener la primera página del PDF
+      const [page] = pdfDoc.getPages();
+
+      // Modificar el contenido de la página
+      page.drawText(` ${name}`, {
+        x: 200,
+        y: 330,
+        size: 20,
+        color: rgb(0, 0, 0), // Color negro
+      });
+      page.drawText(` ${lastName}`, {
+        x: 225,
+        y: 260,
+        size: 20,
+        color: rgb(0, 0, 0), // Color negro
+      });
+
+      // Serializar el PDF modificado a bytes
+      const modifiedPdfBytes = await pdfDoc.save();
+
+      // Crear una URL para el PDF modificado
+      const modifiedPdfUrl = URL.createObjectURL(new Blob([modifiedPdfBytes], { type: 'application/pdf' }));
+
+      // Descargar el PDF modificado
+      const a = document.createElement('a');
+      a.href = modifiedPdfUrl;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.download = 'modified_diploma.pdf';
+      a.click();
+    } catch (error) {
+      console.error('Error al generar el PDF:', error);
+    }
+  };
+
   return (
     <div>
       <div>
@@ -46,26 +68,9 @@ const App = () => {
         <label>Last Name:</label>
         <input type="text" value={lastName} onChange={handleLastNameChange} />
       </div>
-      <BlobProvider document={<MyDocument name={name} lastName={lastName} />}>
-        {({ url, loading, error }) => {
-          if (loading) {
-            return <p>Loading...</p>;
-          }
-          if (error) {
-            return <p>Error: {error.toString()}</p>;
-          }
-          if (url) {
-            return (
-              <div>
-                <a href={url} target="_blank" rel="noopener noreferrer" download="hello.pdf">
-                  <button>Generar</button>
-                </a>
-              </div>
-            );
-          }
-          return null;
-        }}
-      </BlobProvider>
+      <div>
+        <button onClick={generatePDF}>Generar</button>
+      </div>
     </div>
   );
 };
