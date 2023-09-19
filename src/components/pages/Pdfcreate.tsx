@@ -1,52 +1,64 @@
 import React, { useState } from 'react';
-import { BlobProvider } from '@react-pdf-viewer/provider';
-import { PDFDocument, rgb } from 'pdf-lib'; // Importa pdf-lib
-import diplomaPDF from './DIPLOMA.pdf'; // Asegúrate de tener el archivo DIPLOMA.pdf en tu proyecto
+import { PDFDocument, rgb } from 'pdf-lib';
+import { Card, Title,Divider , Button,Input, Text, NumberInput, PasswordInput, Group } from '@mantine/core';
+import diplomaPDF from './DIPLOMA2.pdf';
 
 const App = () => {
-  const [name, setName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [numPeople, setNumPeople] = useState(1);
+  const [peopleData, setPeopleData] = useState([{ name: '', lastName: '' }]);
 
-  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
+  const handleNumPeopleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(event.target.value, 10);
+    setNumPeople(value);
+    const newData = Array.from({ length: value }, () => ({ name: '', lastName: '' }));
+    setPeopleData(newData);
   };
 
-  const handleLastNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setLastName(event.target.value);
+  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
+    const updatedData = [...peopleData];
+    updatedData[index].name = event.target.value;
+    setPeopleData(updatedData);
   };
 
-  const generatePDF = async () => {
+  const handleLastNameChange = (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
+    const updatedData = [...peopleData];
+    updatedData[index].lastName = event.target.value;
+    setPeopleData(updatedData);
+  };
+
+  const generatePDFs = async () => {
     try {
-      // Cargar el PDF existente
       const existingPdfBytes = await fetch(diplomaPDF).then((res) => res.arrayBuffer());
-
-      // Cargar el PDF en un PDFDocument
       const pdfDoc = await PDFDocument.load(existingPdfBytes);
 
-      // Obtener la primera página del PDF
-      const [page] = pdfDoc.getPages();
+      for (let i = 0; i < numPeople; i++) {
+        const srcDoc = await PDFDocument.load(existingPdfBytes);
+        const [page] = srcDoc.getPages();
 
-      // Modificar el contenido de la página
-      page.drawText(` ${name}`, {
-        x: 200,
-        y: 330,
-        size: 20,
-        color: rgb(0, 0, 0), // Color negro
-      });
-      page.drawText(` ${lastName}`, {
-        x: 225,
-        y: 260,
-        size: 20,
-        color: rgb(0, 0, 0), // Color negro
-      });
+        page.drawText(`${peopleData[i].name}`, {
+          x: 208,
+          y: 310,
+          size: 30,
+          color: rgb(0, 0, 0),
+        });
 
-      // Serializar el PDF modificado a bytes
+        page.drawText(`${peopleData[i].lastName}`, {
+          x: 205,
+          y: 280,
+          size: 20,
+          color: rgb(0, 0, 0),
+        });
+
+        const copiedPages = await pdfDoc.copyPages(srcDoc, [0]);
+        pdfDoc.addPage(copiedPages[0]);
+
+
+      }
+
       const modifiedPdfBytes = await pdfDoc.save();
 
-      // Crear una URL para el PDF modificado
       const modifiedPdfUrl = URL.createObjectURL(new Blob([modifiedPdfBytes], { type: 'application/pdf' }));
 
-      // Descargar el PDF modificado
       const a = document.createElement('a');
       a.href = modifiedPdfUrl;
       a.target = '_blank';
@@ -59,20 +71,31 @@ const App = () => {
   };
 
   return (
-    <div>
-      <div>
-        <label>Name:</label>
-        <input type="text" value={name} onChange={handleNameChange} />
-      </div>
-      <div>
-        <label>Last Name:</label>
-        <input type="text" value={lastName} onChange={handleLastNameChange} />
-      </div>
-      <div>
-        <button onClick={generatePDF}>Generar</button>
-      </div>
-    </div>
+    <Card w={450} shadow="sm" padding="lg" radius="md" withBorder>
+      <Group >
+
+        <Text size="md">Número de personas a registrar:</Text>
+        <input type="number" value={numPeople} onChange={handleNumPeopleChange} />
+      </Group>
+
+      {peopleData.map((person, index) => (
+        <div key={index}>
+
+          <Text size="md">Nombre</Text>
+          <Input variant="filled" size="xs" radius="md" value={person.name} onChange={(e) => handleNameChange(e, index)}/>
+
+
+          <Text size="md">Cedula</Text>
+          <Input variant="filled" size="xs" radius="md"  value={person.lastName} onChange={(e) => handleLastNameChange(e, index)}  />
+          <Divider my="sm" />
+
+        </div>
+      ))}
+        <Button onClick={generatePDFs} variant="filled" color="indigo" fullWidth>Generar</Button>
+
+
+    </Card>
   );
 };
 
-export default App;
+export default App; 
