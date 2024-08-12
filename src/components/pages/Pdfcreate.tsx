@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PDFDocument, rgb } from 'pdf-lib';
-import { Card, Divider, Button, Input, Text, NumberInput, ScrollArea, Center } from '@mantine/core';
+import { Card, Divider, Button, TextInput, Text, NumberInput, ScrollArea, Center } from '@mantine/core';
 import diplomaPDF from './DIPLOMA2.pdf';
 
 const App = () => {
@@ -90,17 +90,15 @@ const App = () => {
             {peopleData.map((person, index) => (
               <div key={index}>
                 <Text size="md">Nombre Numero {index + 1}</Text>
-                <Input
+                <TextInput
                   variant="filled"
-                  size="xs"
                   radius="md"
                   value={person.name}
                   onChange={(e) => handleNameChange(e, index)}
                 />
                 <Text size="md">Cedula Numero {index + 1}</Text>
-                <Input
+                <TextInput
                   variant="filled"
-                  size="xs"
                   radius="md"
                   value={person.lastName}
                   onChange={(e) => handleLastNameChange(e, index)}
