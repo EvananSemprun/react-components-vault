@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { PDFDocument, rgb } from 'pdf-lib';
-import { Card, Divider, Button, TextInput, Text, NumberInput, ScrollArea, Center } from '@mantine/core';
+import { Card, Divider, Button, TextInput, Text, NumberInput, ScrollArea, Center, Group } from '@mantine/core';
 import diplomaPDF from './DIPLOMA2.pdf';
 
 const App = () => {
   const [numPeople, setNumPeople] = useState(1);
-  const [peopleData, setPeopleData] = useState([{ name: '', lastName: '' }]);
+  const [peopleData, setPeopleData] = useState([{ name: '', cedula: '' }]);
+  const [hours, setHours] = useState(''); // Nuevo estado para horas
+  const [title, setTitle] = useState(''); // Nuevo estado para título
 
   const handleNumPeopleChange = (value: number | "") => {
     const numValue = value === "" ? 1 : value;
     setNumPeople(numValue);
-    const newData = Array.from({ length: numValue }, () => ({ name: '', lastName: '' }));
+    const newData = Array.from({ length: numValue }, () => ({ name: '', cedula: '' }));
     setPeopleData(newData);
   };
 
@@ -20,14 +22,26 @@ const App = () => {
     setPeopleData(updatedData);
   };
 
-  const handleLastNameChange = (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const handleCedulaChange = (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const updatedData = [...peopleData];
-    updatedData[index].lastName = event.target.value;
+    updatedData[index].cedula = event.target.value;
     setPeopleData(updatedData);
   };
 
+  const handleHoursChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setHours(event.target.value); // Actualiza el estado de horas
+  };
+
+  const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTitle(event.target.value); // Actualiza el estado de título
+  };
+
   const isFormComplete = () => {
-    return peopleData.every(person => person.name.trim() !== '' && person.lastName.trim() !== '');
+    return (
+      peopleData.every(person => person.name.trim() !== '' && person.cedula.trim() !== '') &&
+      hours.trim() !== '' &&
+      title.trim() !== ''
+    );
   };
 
   const generatePDFs = async () => {
@@ -42,13 +56,27 @@ const App = () => {
         page.drawText(`${peopleData[i].name}`, {
           x: 208,
           y: 310,
-          size: 50,
+          size: 40,
           color: rgb(0, 0, 0),
         });
 
-        page.drawText(`${peopleData[i].lastName}`, {
-          x: 205,
+        page.drawText(`${peopleData[i].cedula}`, {
+          x: 305,
           y: 280,
+          size: 20,
+          color: rgb(0, 0, 0),
+        });
+
+        page.drawText(`${title}`, {
+          x: 150,
+          y: 500,
+          size: 30,
+          color: rgb(0, 0, 0),
+        });
+
+        page.drawText(`Horas: ${hours}`, {
+          x: 150,
+          y: 550,
           size: 20,
           color: rgb(0, 0, 0),
         });
@@ -73,8 +101,28 @@ const App = () => {
 
   return (
     <>
-      <Center>
-        <Card w={450} mt={15} shadow="sm" padding="lg" radius="md" withBorder>
+      <Group position="center" >
+        <Card  w={450} mt={15} shadow="xl" padding="lg" radius="md" withBorder>
+          <Text size="md">Título:</Text>
+          <TextInput
+            variant="filled"
+            radius="md"
+            value={title}
+            onChange={handleTitleChange}
+            mb={10}
+          />
+
+          <Text size="md">Horas:</Text>
+          <TextInput
+            variant="filled"
+            radius="md"
+            value={hours}
+            onChange={handleHoursChange}
+            mb={10}
+          />
+        </Card>
+
+        <Card w={450} mt={15} ml={25} mr={25} shadow="xl" padding="lg" radius="md" withBorder>
           <Text size="md">Número de personas a registrar:</Text>
           <NumberInput
             value={numPeople}
@@ -86,6 +134,9 @@ const App = () => {
             size="lg"
             mb={10}
           />
+
+
+
           <ScrollArea style={{ height: 670 }} type="never">
             {peopleData.map((person, index) => (
               <div key={index}>
@@ -96,12 +147,12 @@ const App = () => {
                   value={person.name}
                   onChange={(e) => handleNameChange(e, index)}
                 />
-                <Text size="md">Cedula Numero {index + 1}</Text>
+                <Text size="md">Cédula Numero {index + 1}</Text>
                 <TextInput
                   variant="filled"
                   radius="md"
-                  value={person.lastName}
-                  onChange={(e) => handleLastNameChange(e, index)}
+                  value={person.cedula}
+                  onChange={(e) => handleCedulaChange(e, index)}
                 />
                 <Divider my="sm" />
               </div>
@@ -117,7 +168,7 @@ const App = () => {
             Generar
           </Button>
         </Card>
-      </Center>
+      </Group>
     </>
   );
 };
