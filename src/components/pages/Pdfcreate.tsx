@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { PDFDocument, rgb } from 'pdf-lib';
-import { Card, Divider, Button, TextInput, Text, NumberInput, ScrollArea, Center, Group } from '@mantine/core';
 import diplomaPDF from './DIPLOMA2.pdf';
+import { PDFDocument, rgb } from 'pdf-lib';
+import { Card, Divider, Button, TextInput, Text, NumberInput, ScrollArea, Group } from '@mantine/core';
 
 const App = () => {
   const [numPeople, setNumPeople] = useState(1);
   const [peopleData, setPeopleData] = useState([{ name: '', cedula: '' }]);
-  const [hours, setHours] = useState(''); // Nuevo estado para horas
-  const [title, setTitle] = useState(''); // Nuevo estado para título
+  const [hours, setHours] = useState(''); 
+  const [title, setTitle] = useState(''); 
 
   const handleNumPeopleChange = (value: number | "") => {
     const numValue = value === "" ? 1 : value;
@@ -29,11 +29,11 @@ const App = () => {
   };
 
   const handleHoursChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setHours(event.target.value); // Actualiza el estado de horas
+    setHours(event.target.value); 
   };
 
   const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(event.target.value); // Actualiza el estado de título
+    setTitle(event.target.value); 
   };
 
   const isFormComplete = () => {
@@ -68,16 +68,16 @@ const App = () => {
         });
 
         page.drawText(`${title}`, {
-          x: 150,
-          y: 500,
-          size: 30,
+          x: 120,
+          y: 200,
+          size: 40,
           color: rgb(0, 0, 0),
         });
 
-        page.drawText(`Horas: ${hours}`, {
-          x: 150,
-          y: 550,
-          size: 20,
+        page.drawText(`${hours}`, {
+          x: 355,
+          y: 100,
+          size: 15,
           color: rgb(0, 0, 0),
         });
 
@@ -92,7 +92,7 @@ const App = () => {
       a.href = modifiedPdfUrl;
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
-      a.download = 'modified_diploma.pdf';
+      a.download = 'diploma ' + `${title}` + '.pdf';
       a.click();
     } catch (error) {
       console.error('Error al generar el PDF:', error);
@@ -102,7 +102,7 @@ const App = () => {
   return (
     <>
       <Group position="center" >
-        <Card  w={450} mt={15} shadow="xl" padding="lg" radius="md" withBorder>
+        <Card w={450} mt={15} shadow="xl" padding="lg" radius="md" withBorder>
           <Text size="md">Título:</Text>
           <TextInput
             variant="filled"
@@ -134,8 +134,6 @@ const App = () => {
             size="lg"
             mb={10}
           />
-
-
 
           <ScrollArea style={{ height: 670 }} type="never">
             {peopleData.map((person, index) => (
