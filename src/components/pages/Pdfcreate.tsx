@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PDFDocument, rgb } from 'pdf-lib';
-import { Card, Divider, Button, TextInput, Text, NumberInput, ScrollArea, Center, Group } from '@mantine/core';
+import { Card, Divider, Button, TextInput, Text, NumberInput, ScrollArea, Group, Title } from '@mantine/core';
 import diplomaPDF from './DIPLOMA2.pdf';
 
 const App = () => {
@@ -102,8 +102,10 @@ const App = () => {
   return (
     <>
       <Group position="center" >
+        <div style={{ marginTop: 20 }}>
         <Card  w={450} mt={15} shadow="xl" padding="lg" radius="md" withBorder>
-          <Text size="md">Título:</Text>
+        <Title c="teal.4" order={2}>Generar Certificado</Title>
+          <Text fz="xl" c="teal.4" size="md">Título:</Text>
           <TextInput
             variant="filled"
             radius="md"
@@ -112,18 +114,20 @@ const App = () => {
             mb={10}
           />
 
-          <Text size="md">Horas:</Text>
+          <Text fz="xl" c="teal.4" size="md">Horas:</Text>
           <TextInput
             variant="filled"
             radius="md"
             value={hours}
             onChange={handleHoursChange}
             mb={10}
+            
           />
         </Card>
+        </div>
 
         <Card w={450} mt={15} ml={25} mr={25} shadow="xl" padding="lg" radius="md" withBorder>
-          <Text size="md">Número de personas a registrar:</Text>
+          <Text fz="xl" c="teal.4" size="md">Número de personas a registrar:</Text>
           <NumberInput
             value={numPeople}
             min={1}
@@ -135,19 +139,17 @@ const App = () => {
             mb={10}
           />
 
-
-
-          <ScrollArea style={{ height: 670 }} type="never">
+          <ScrollArea style={{ height: 350 }} type="never">
             {peopleData.map((person, index) => (
               <div key={index}>
-                <Text size="md">Nombre Numero {index + 1}</Text>
+                <Text fz="xl" c="teal.4" size="md">Nombre Numero {index + 1}</Text>
                 <TextInput
                   variant="filled"
                   radius="md"
                   value={person.name}
                   onChange={(e) => handleNameChange(e, index)}
                 />
-                <Text size="md">Cédula Numero {index + 1}</Text>
+                <Text fz="xl" c="teal.4" size="md">Cédula Numero {index + 1}</Text>
                 <TextInput
                   variant="filled"
                   radius="md"

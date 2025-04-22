@@ -1,6 +1,6 @@
 import { useState, ChangeEvent } from 'react';
 import { Card, Title, Text, Button, Grid, Input } from '@mantine/core';
-import { motion } from 'framer-motion'; // Importa motion desde Framer Motion
+import { motion } from 'framer-motion'; 
 import co from './co.json';
 
 function Home() {
@@ -31,10 +31,10 @@ function Home() {
         {filteredData.map((item, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, scale: 0.5 }} // Animación inicial
-            animate={{ opacity: 1, scale: 1 }} // Animación al cargar
-            whileHover={{ scale: 1.2 }} // Animación al hacer hover
-            transition={{ duration: 0.5 }} // Duración de la animación
+            initial={{ opacity: 0, scale: 0.5 }} 
+            animate={{ opacity: 1, scale: 1 }} 
+            whileHover={{ scale: 1.2 }} 
+            transition={{ duration: 0.5 }} 
             style={{ minWidth: '250px', maxWidth: '400px' }}
           >
             <Card
