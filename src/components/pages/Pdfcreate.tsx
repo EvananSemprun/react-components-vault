@@ -69,15 +69,15 @@ const App = () => {
 
         page.drawText(`${title}`, {
           x: 150,
-          y: 500,
+          y: 210,
           size: 30,
           color: rgb(0, 0, 0),
         });
 
-        page.drawText(`Horas: ${hours}`, {
-          x: 150,
-          y: 550,
-          size: 20,
+        page.drawText(`${hours}`, {
+          x: 350,
+          y: 100,
+          size: 15,
           color: rgb(0, 0, 0),
         });
 
@@ -85,8 +85,8 @@ const App = () => {
         pdfDoc.addPage(copiedPages[0]);
       }
 
-      const modifiedPdfBytes = await pdfDoc.save();
-      const modifiedPdfUrl = URL.createObjectURL(new Blob([modifiedPdfBytes], { type: 'application/pdf' }));
+const modifiedPdfBytes = new Uint8Array(await pdfDoc.save());
+const modifiedPdfUrl = URL.createObjectURL(new Blob([modifiedPdfBytes], { type: 'application/pdf' }));
 
       const a = document.createElement('a');
       a.href = modifiedPdfUrl;
